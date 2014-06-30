@@ -11,7 +11,7 @@ function IndexedDb(db, indexDb) {
     this.db.pre(function(op, add) {
         if(op.type !== 'put') return;
 
-        var uid = new Date().getTime() + Math.floor(Math.random() * 2000);
+        var uid = new Date().getTime() + Math.floor(Math.random() * 10000);
 
         Object.keys(op.value).map(function(property) {
             add({
