@@ -31,7 +31,14 @@ var insertTestData = function(cb) {
 }
 
 insertTestData(function() {
-    test('Test creating index', function(t) {
+    test('Test query stream', function(t) {
+        indexedDb.createQueryStream('user', 'max')
+            .on('data', function(result) {
+                t.equals(result.user, 'max');
+            })
+            .on('end', t.end.bind(t));
+    });
+    test('Test query method', function(t) {
         indexedDb.query('user', 'max', function(err, results) {
             results.map(function(result) {
                 t.equals(result.user, 'max');
