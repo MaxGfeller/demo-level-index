@@ -1,0 +1,23 @@
+{
+  "name": "level-index",
+  "version": "0.0.0",
+  "description": "Just a test thingy",
+  "main": "index.js",
+  "scripts": {
+    "test": "rm -rf tests/db & tap tests/test-*.js"
+  },
+  "author": "Max Gfeller <max.gfeller@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "concat-stream": "^1.4.6",
+    "level-hooks": "^4.5.0",
+    "level-sublevel": "^5.2.0",
+    "through": "^2.3.4"
+  },
+  "devDependencies": {
+    "leveldown": "^0.10.2",
+    "levelup": "^0.18.5",
+    "sublevel": "^2.4.0",
+    "tap": "^0.4.11"
+  }
+}
