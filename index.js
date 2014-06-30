@@ -6,8 +6,6 @@ function IndexedDb(db, indexDb) {
     this.db = db;
     this.indexDb = indexDb;
 
-    hooks(this.db);
-
     this.db.pre(function(op, add) {
         if(op.type !== 'put') return;
 
