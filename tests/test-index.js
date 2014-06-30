@@ -18,8 +18,8 @@ var getRandomUser = function(arr) {
 var insertTestData = function(cb) {
     var users = ['max', 'dominic', 'lukas', 'gordon'];
     var batch = messagesDb.batch();
-    for(var i = 0; i < 100; i++) {
-        batch.put('' + new Date().getTime() + Math.floor(Math.random() * 2000), {
+    for(var i = 0; i < 10000; i++) {
+        batch.put('' + new Date().getTime() + Math.floor(Math.random() * 10000000), {
             user: getRandomUser(users),
             message: 'Hello World'
         });
@@ -34,7 +34,7 @@ insertTestData(function() {
     test('Test creating index', function(t) {
         indexedDb.query('user', 'max', function(err, results) {
             results.map(function(result) {
-                t.equals('max', result.user);
+                t.equals(result.user, 'max');
             });
             t.end();
         });
