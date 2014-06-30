@@ -19,7 +19,7 @@ var insertTestData = function(cb) {
     var users = ['max', 'dominic', 'lukas', 'gordon'];
     var batch = messagesDb.batch();
     for(var i = 0; i < 10000; i++) {
-        batch.put('' + new Date().getTime() + Math.floor(Math.random() * 10000000), {
+        batch.put('' + new Date().getTime() + Math.floor(Math.random() * 100000000), {
             user: getRandomUser(users),
             message: 'Hello World'
         });
